@@ -22,6 +22,7 @@ type CameraProps = {
   title: string;
   description: string;
   src: string;
+  isHwy: boolean;
 }[];
 
 const CameraSection = ({ title, cameras }: CameraSectionProps) => {
@@ -43,7 +44,11 @@ const CameraSection = ({ title, cameras }: CameraSectionProps) => {
                     </CardHeader>
                   </div>
                   <CardContent>
-                    <iframe src={camera.src} height={400} width={'100%'} />
+                    {camera.isHwy ? (
+                      <iframe src={camera.src} height={400} width={'100%'} />
+                    ) : (
+                      <iframe src={camera.src} width={'100%'} height={206} />
+                    )}
                   </CardContent>
                 </Card>
               ))}
