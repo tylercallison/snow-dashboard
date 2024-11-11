@@ -15,7 +15,7 @@ import Container from './container';
 
 export function NavMenu() {
   return (
-    <div className='fixed top-0 z-20 w-full bg-white/80 backdrop-blur'>
+    <div className='fixed top-0 z-20 w-full bg-white/80 dark:bg-black/80 backdrop-blur'>
       <Container>
         <NavigationMenu>
           <NavigationMenuList>

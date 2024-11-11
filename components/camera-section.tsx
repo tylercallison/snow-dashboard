@@ -28,7 +28,7 @@ type CameraProps = {
 const CameraSection = ({ title, cameras }: CameraSectionProps) => {
   return (
     <Container>
-      <section className='my-8'>
+      <section className='md:my-8'>
         <Accordion type='single' collapsible>
           <AccordionItem value='item-1'>
             <AccordionTrigger className='text-3xl font-bold'>
