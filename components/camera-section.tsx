@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from './ui/accordion';
+import { AspectRatio } from './ui/aspect-ratio';
 import {
   Card,
   CardHeader,
@@ -53,12 +54,15 @@ const CameraSection = ({ title, cameras }: CameraSectionProps) => {
                         allowFullScreen
                       />
                     ) : (
-                      <iframe
-                        className='h-full w-full min-h-52'
-                        src={`${camera.src}?autoplay=false`}
-                        height={'100%'}
-                        allowFullScreen
-                      />
+                      <AspectRatio ratio={16 / 9}>
+                        <iframe
+                          className='object-cover'
+                          src={`${camera.src}?autoplay=false`}
+                          height={'100%'}
+                          width={'100%'}
+                          allowFullScreen
+                        />
+                      </AspectRatio>
                     )}
                   </CardContent>
                 </Card>
