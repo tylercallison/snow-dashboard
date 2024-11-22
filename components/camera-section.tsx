@@ -46,11 +46,11 @@ const CameraSection = ({ title, cameras }: CameraSectionProps) => {
                   <CardContent>
                     {camera.isHwy ? (
                       <iframe
+                        className='h-full w-full min-h-[400px] bg-white'
                         src={camera.src}
                         height={'100%'}
                         width={'100%'}
                         allowFullScreen
-                        className='h-full w-full min-h-[400px]'
                       />
                     ) : (
                       <iframe
