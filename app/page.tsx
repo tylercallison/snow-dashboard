@@ -23,6 +23,12 @@ const cameraSectionData = [
         src: 'https://player.brownrice.com/embed/northstargolf',
         isHwy: false,
       },
+      {
+        title: 'Snow Stake',
+        description: 'Northstar Snow Stake',
+        src: 'https://player.brownrice.com/embed/northstarsnowstake',
+        isHwy: false,
+      },
     ],
   },
   {
