@@ -59,6 +59,12 @@ const cameraSectionData = [
         isHwy: false,
       },
       {
+        title: 'Lakeview',
+        description: 'Heavenly Lakeview',
+        src: 'https://player.brownrice.com/embed/heavenlylakeview',
+        isHwy: false,
+      },
+      {
         title: 'Snow Stake',
         description: 'Heavenly Snow Stake',
         src: 'https://player.brownrice.com/embed/heavenlysnowstake',
