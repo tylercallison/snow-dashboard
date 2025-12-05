@@ -9,26 +9,18 @@ import {
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import Container from './container';
 
 export function NavMenu() {
   return (
-    <div className='fixed top-0 z-20 w-full bg-white/80 dark:bg-black/80 backdrop-blur'>
+    <div className='fixed top-0 z-20 w-full bg-white/80 dark:bg-black/80 backdrop-blur py-2'>
       <Container>
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link href='/' legacyBehavior passHref>
-                <NavigationMenuLink
-                  className={cn(
-                    navigationMenuTriggerStyle(),
-                    'p-0 text-xl font-semibold'
-                  )}
-                >
-                  Tahoe Snow Dashboard
-                </NavigationMenuLink>
+              <Link href='/' className='text-xl font-semibold'>
+                Tahoe Snow Dashboard
               </Link>
             </NavigationMenuItem>
           </NavigationMenuList>

@@ -39,7 +39,7 @@ const CameraSection = ({ title, cameras }: CameraSectionProps) => {
               {cameras.map((camera) => (
                 <Card key={camera.title}>
                   <div className='flex justify-between gap-8 p-6'>
-                    <CardHeader className='flex-shrink-0 p-0'>
+                    <CardHeader className='shrink-0 p-0'>
                       <CardTitle>{camera.title}</CardTitle>
                       <CardDescription>{camera.description}</CardDescription>
                     </CardHeader>
