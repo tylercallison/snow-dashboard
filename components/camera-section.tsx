@@ -13,10 +13,13 @@ import {
   CardDescription,
   CardContent,
 } from './ui/card';
+import type { SnowReport } from '@/lib/snow-report';
+import { SnowReportStats } from './snow-report-stats';
 
 type CameraSectionProps = {
   title: string;
   cameras: CameraProps;
+  snowReport?: SnowReport | null;
 };
 
 type CameraProps = {
@@ -26,14 +29,17 @@ type CameraProps = {
   isHwy: boolean;
 }[];
 
-const CameraSection = ({ title, cameras }: CameraSectionProps) => {
+const CameraSection = ({ title, cameras, snowReport }: CameraSectionProps) => {
   return (
     <Container>
       <section className='md:my-8'>
         <Accordion type='single' collapsible>
           <AccordionItem value='item-1'>
             <AccordionTrigger className='text-3xl font-bold'>
-              {title}
+              <div className='flex flex-1 items-center justify-between pr-4'>
+                <span>{title}</span>
+                {snowReport && <SnowReportStats report={snowReport} />}
+              </div>
             </AccordionTrigger>
             <AccordionContent className='grid grid-cols-1 items-center justify-center gap-4 md:grid-cols-2 xl:grid-cols-6'>
               {cameras.map((camera) => (

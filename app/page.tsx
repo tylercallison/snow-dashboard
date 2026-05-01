@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { CameraSection } from '@/components/camera-section';
+import { fetchSnowReport, type SnowReport } from '@/lib/snow-report';
 
 const cameraSectionData = [
   {
@@ -179,7 +180,19 @@ const cameraSectionData = [
   },
 ];
 
-const Home = () => {
+const Home = async () => {
+  const [northstarReport, heavenlyReport, kirkwoodReport] = await Promise.all([
+    fetchSnowReport('northstar'),
+    fetchSnowReport('heavenly'),
+    fetchSnowReport('kirkwood'),
+  ]);
+
+  const snowByTitle: Record<string, SnowReport | null> = {
+    Northstar: northstarReport,
+    Heavenly: heavenlyReport,
+    Kirkwood: kirkwoodReport,
+  };
+
   return (
     <Fragment>
       <div className='my-16'>
@@ -187,6 +200,7 @@ const Home = () => {
           <CameraSection
             title={sectionData.title}
             cameras={sectionData.cameras}
+            snowReport={snowByTitle[sectionData.title] ?? undefined}
             key={sectionData.title}
           />
         ))}
